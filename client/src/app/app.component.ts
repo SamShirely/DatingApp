@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit{
   title = 'The Dating App';
-  users: any;
+  users: any; //our users can be represented as any data type. Turns off type saftey and typescript.
 
-  constructor(private http: HttpClient){
+  constructor(private http:HttpClient){
 
+  }
+  ngOnInit() {
+    this.http.get
   }
 }

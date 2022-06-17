@@ -14,17 +14,20 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
+//startup is what is needed to start the API on your computer
+
 namespace API
 {
-    public class Startup
+    public class Startup //class
     {
         private readonly IConfiguration _config;
 
-        public Startup(IConfiguration config)
+        public Startup(IConfiguration config) //constructor
         {
             _config = config;
            
         }
+        // config comes from a different class, so it is setting _config to a local variable 
 
         public IConfiguration Configuration { get; }
 
@@ -58,6 +61,7 @@ namespace API
             app.UseRouting();
 
             app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200"));
+            //gives permissions to 
 
             app.UseAuthorization();
 
